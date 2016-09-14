@@ -1,0 +1,44 @@
+<!DOCTYPE html>	
+<html>
+  	<head>
+    		<title>Logopedia Pictures Editor</title>
+
+    		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+		<script type="text/javascript" src="script.js"></script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+  	</head>
+  	<body>
+		<div id = "leftPanel"> 
+			<p id = "stepOne">1. Choose background: </p>
+			<input id = "chooseBgFile" type="file" name="pic" placeholder="baga" accept="image/*" onchange="setBackground(event)">
+
+			<p id = "stepTwo">2. Enter question: </p>
+			<input id = "task" type="text" value="Enter task..." onchange="setTaskInput(event)" onclick = "clean(event)">
+
+			<p id = "audioLabel">Task Audio: </p>
+			<input id = "questionAudio" type="file" name="pic" accept="audio/*" onchange="setTaskAudio(event)">
+
+			<p id = "goodAnswerLabel">Good Answer: </p>
+			<input id = "goodAnswer" type="file" name="pic" accept="audio/*" onchange="setGoodAnswerAudio(event)">
+			<input id = "goodText" type="text" value="Write the correct answer!" onchange="setGoodAnswerText(event)" 
+				onclick = "clean(event)">
+
+			<p id = "badAnswerLabel">Wrong Answer: </p>
+			<input id = "badAnswer" type="file" name="pic" accept="audio/*" onchange="setBadAnswerAudio(event)">
+			<input id = "badText" type="text" value="Write the incorrect answer!" onchange="setBadAnswerText(event)" 
+				onclick = "clean(event)">
+
+			<button id = "submitQuestion" onclick="submit(event)">Submit Question</button>
+
+			<p id = "stepThree">3. Using Drag and Drop, select the region that represents the correct answer to the task.</p>
+			<button id = "makeJson" onclick="generate(event)">Generate Code</button>
+		</div>
+
+		<div id = "mainPanel" onmousedown = "mousedown(event)" onmousemove = "mousemove(event)" onmouseup = "mouseup(event)"> 
+			<div id="div" hidden></div>
+		</div>
+
+
+  	</body>
+</html>

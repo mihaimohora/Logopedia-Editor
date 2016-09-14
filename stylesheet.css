@@ -1,0 +1,138 @@
+body, html{
+	margin: 0;
+	background: black;
+}
+
+p{
+	color: white;
+}
+
+#div{
+	border: 1px dotted #fff;
+   	position: absolute;
+	width: 0px;
+	height: 0px;
+}
+
+#leftPanel{
+	background: #404040;
+	height: 95%;
+	width: 15%;
+	position: absolute;
+	left: 1%;
+	border-radius: 12%;
+	border: 1px solid white;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+#mainPanel{
+	background: #404040;
+	border-radius: 5%;
+	border: 1px solid white;
+	position: absolute;
+	left: 18%;
+	height: 95%;
+	width: 80%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+#stepOne{
+	position: absolute;
+	left: 8%;
+	top: 10%;
+}
+
+#chooseBgFile{
+	
+	position: absolute;
+	left: 25%;
+	top: 18%;
+}	
+
+#stepTwo{
+	position: absolute;
+	left: 8%;
+	top: 22%;
+}
+
+#task{
+	position: absolute;
+	left: 8%;
+	top: 30%;
+}
+
+#audioLabel{
+	position: absolute;
+	left: 3%;
+	top: 33%; 	
+}
+
+#questionAudio{
+	position: absolute;
+	left: 55%;
+	top: 35%;
+}
+
+#goodAnswerLabel{
+	position: absolute;
+	left: 3%;
+	top: 39%; 	
+}
+
+#goodAnswer{
+	position: absolute;
+	left: 55%;
+	top: 41%;
+}
+
+#goodText{
+	position: absolute;
+	left: 8%;
+	top: 46%;
+}
+
+
+#badAnswerLabel{
+	position: absolute;
+	left: 3%;
+	top: 49%; 	
+}
+
+#badAnswer{
+	position: absolute;
+	left: 55%;
+	top: 51%;
+}
+
+#badText{
+	position: absolute;
+	left: 8%;
+	top: 56%;
+}
+
+
+#stepThree{
+	position: absolute;
+	left: 8%;
+	top: 60%;
+}
+
+#submitQuestion{
+	position: absolute;
+	top: 77%;
+	left: 25%;
+}
+
+#makeJson{
+	position: absolute;
+	top: 88%;
+	left: 26%;
+}
+input[type='file'] {
+  	color:transparent;  
+	width:40%; 
+}
+
+
