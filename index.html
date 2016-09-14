@@ -10,29 +10,28 @@
   	</head>
   	<body>
 		<div id = "leftPanel"> 
-			<p id = "stepOne">1. Choose background: </p>
-			<input id = "chooseBgFile" type="file" name="pic" placeholder="baga" accept="image/*" onchange="setBackground(event)">
+			<input type="file" id="browse" name="fileupload" onchange="handlechange();"/>
 
-			<p id = "stepTwo">2. Enter question: </p>
-			<input id = "task" type="text" value="Enter task..." onchange="setTaskInput(event)" onclick = "clean(event)">
+			<p id = "stepOne">1. Choose background: </p>
+			<input id = "chooseBgFile" type="button" value = "Upload File" accept="image/*" onclick="handleBrowseClick(event);">
+
+			<p id = "stepTwo">2. Enter task: </p>
+			<input id = "task" type="text" value="Enter task..." onchange="setTaskInput(event)" >
 
 			<p id = "audioLabel">Task Audio: </p>
-			<input id = "questionAudio" type="file" name="pic" accept="audio/*" onchange="setTaskAudio(event)">
+			<input id = "questionAudio" type="button" value = "Upload File" accept="audio/*" onclick = "handleBrowseClick(event)">
 
 			<p id = "goodAnswerLabel">Good Answer: </p>
-			<input id = "goodAnswer" type="file" name="pic" accept="audio/*" onchange="setGoodAnswerAudio(event)">
-			<input id = "goodText" type="text" value="Write the correct answer!" onchange="setGoodAnswerText(event)" 
-				onclick = "clean(event)">
+			<input id = "goodAnswer" type="button" value = "Upload File" accept="audio/*" onclick = "handleBrowseClick(event)">
+			<input id = "goodText" type="text" value="Write the correct answer!" onchange= "setGoodAnswerText(event)">
 
 			<p id = "badAnswerLabel">Wrong Answer: </p>
-			<input id = "badAnswer" type="file" name="pic" accept="audio/*" onchange="setBadAnswerAudio(event)">
-			<input id = "badText" type="text" value="Write the incorrect answer!" onchange="setBadAnswerText(event)" 
-				onclick = "clean(event)">
-
-			<button id = "submitQuestion" onclick="submit(event)">Submit Question</button>
+			<input id = "badAnswer" type="button" value = "Upload File" accept="audio/*" onclick = "handleBrowseClick(event)">
+			<input id = "badText" type="text" value="Write the incorrect answer!" onchange= "setBadAnswerText(event)">
 
 			<p id = "stepThree">3. Using Drag and Drop, select the region that represents the correct answer to the task.</p>
-			<button id = "makeJson" onclick="generate(event)">Generate Code</button>
+			<button id = "submitQuestion" onclick="submit(event)">Submit Question</button>
+			<button id = "makeJson" onclick="generate(event)">Generate JSON</button>
 		</div>
 
 		<div id = "mainPanel" onmousedown = "mousedown(event)" onmousemove = "mousemove(event)" onmouseup = "mouseup(event)"> 

@@ -1,1 +1,1 @@
-Logopedia-Editor version 1.0
+Logopedia-Editor version 1.1

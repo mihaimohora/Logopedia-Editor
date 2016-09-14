@@ -23,10 +23,40 @@ function CompleteAnswer()
 	this.backgroundFileName = "";
 }
 
+function handleBrowseClick(e)
+{	
+	target = e.target;
+	var fileinput = document.getElementById("browse");
+	fileinput.click();
+}
+
+function handlechange()
+{
+	var fileinput = document.getElementById("browse");
+	var button = target;
+	button.value = fileinput.value.substring(12, fileinput.value.length);   
+	
+	switch(button.id)
+	{
+		case "chooseBgFile":
+			backgroundInput = button.value;
+			setBackground();
+			break;
+		case "questionAudio":
+			taskAudio = button.value;
+			break;
+		case "goodAnswer":
+			goodAnswerAudio = button.value;
+			break;
+		case "badAnswer":
+			wrongAnswerAudio = button.value;
+			break;
+	}	
+}
+
 window.onload = function()
 {
 	moving = true;
-	
 	var div = document.getElementById('div');
 	mp = document.getElementById('mainPanel');
 
@@ -49,17 +79,24 @@ window.onload = function()
 	coordinates = new Coordinates(0,0,0,0);
 	question = new Question();	
 	completeAnswer = new CompleteAnswer();
-	//alert(mp.offsetLeft);
+
+	task = document.getElementById("task");
+	good = document.getElementById("goodText");
+	bad = document.getElementById("badText");
+
+	task.addEventListener("click", clean);
+	good.addEventListener("click", clean);
+	bad.addEventListener("click", clean);
 }
 
 
-setBackground = function(e)
+function setBackground()
 {
-		var tgt = e.target || window.event.srcElement;
+		var tgt = document.getElementById("browse");
 		files = tgt.files;
 		
 		var name = tgt.value.substring(12, tgt.value.length);
-		backgroundInput = name;
+		
 	
 		if (FileReader && files && files.length)
 		{	
@@ -71,7 +108,6 @@ setBackground = function(e)
 			}
 			fr.readAsDataURL(files[0]);
 		}
-		tgt.value = name;
 	
 }
 
@@ -122,7 +158,8 @@ mouseup = function(e)
 	if(drawing)
    	{	
 		moving = false;
-		coordinates = new Coordinates(parseInt(div.style.width), parseInt(div.style.height), parseInt(div.style.top), parseInt(div.style.left));
+		coordinates = new Coordinates(parseInt(div.style.width), parseInt(div.style.height), parseInt(div.style.top), 
+			parseInt(div.style.left));
 	}
 }
 
@@ -130,6 +167,7 @@ clean = function(e)
 {
 	var tgt = e.target;
 	tgt.value = "";
+	tgt.removeEventListener("click", clean);
 }
 
 setTaskInput = function(e)
@@ -138,31 +176,10 @@ setTaskInput = function(e)
 	taskInput = elem.value;
 }
 
-setTaskAudio = function(e)
-{
-	var elem = document.getElementById("questionAudio");
-	var name = elem.value.substring(12, elem.value.length);
-	taskAudio = name;
-
-}
-setGoodAnswerAudio = function(e)
-{
-	var elem = document.getElementById("goodAnswer");
-	var name = elem.value.substring(12, elem.value.length);
-	goodAnswerAudio = name;
-}
-
 setGoodAnswerText = function(e)
 {
 	var elem = document.getElementById("goodText");
 	goodAnswerInput = elem.value;
-}
-
-setBadAnswerAudio = function(e)
-{
-	var elem = document.getElementById("badAnswer");
-	var name = elem.value.substring(12, elem.value.length);
-	wrongAnswerAudio = name;
 }
 
 setBadAnswerText = function(e)
@@ -177,8 +194,25 @@ submit = function(e)
 	question.task = taskInput;
 	question.taskFileName = taskAudio;
 	question.rightAnswerArea = coordinates;
-
 	completeAnswer.questionsArray.push(question);
+
+	task.addEventListener("click", clean);
+	task.value = "Enter task...";
+
+	good.addEventListener("click", clean);
+	good.value = "Write the correct answer!";
+
+	bad.addEventListener("click", clean);
+	bad.value = "Write the incorrect answer!";
+
+	taska = document.getElementById("questionAudio");
+	taska.value = "Upload File";
+
+	gooda = document.getElementById("goodAnswer");
+	gooda.value = "Upload File";
+
+	bada = document.getElementById("badAnswer");
+	bada.value = "Upload File";
 }
 
 generate = function(e)
@@ -191,7 +225,6 @@ generate = function(e)
 
 	j = JSON.stringify(completeAnswer);
 	copyToClipboard(j);	
-	//alert(j);
 }
 
 function copyToClipboard(text) {

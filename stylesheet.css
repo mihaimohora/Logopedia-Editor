@@ -7,6 +7,11 @@ p{
 	color: white;
 }
 
+#browse
+{
+	display: none;
+}
+
 #div{
 	border: 1px dotted #fff;
    	position: absolute;
@@ -17,7 +22,7 @@ p{
 #leftPanel{
 	background: #404040;
 	height: 95%;
-	width: 15%;
+	width: 25%;
 	position: absolute;
 	left: 1%;
 	border-radius: 12%;
@@ -31,108 +36,140 @@ p{
 	border-radius: 5%;
 	border: 1px solid white;
 	position: absolute;
-	left: 18%;
+	left: 28%;
 	height: 95%;
-	width: 80%;
+	width: 70%;
 	margin-top: 1%;
 	margin-bottom: 1%;
 }
 
 #stepOne{
-	position: absolute;
-	left: 8%;
-	top: 10%;
+	position: relative;
+	margin-left: 8%;
+	margin-top: 15%;
+	margin-bottom: 0;
 }
 
 #chooseBgFile{
-	
-	position: absolute;
-	left: 25%;
-	top: 18%;
+	position: relative;
+	margin-left: 25%;
+	margin-top: 3%;
 }	
 
 #stepTwo{
-	position: absolute;
-	left: 8%;
-	top: 22%;
+	position: relative;
+	margin-left: 8%;
+	margin-top: 5%;
+	margin-bottom: 0;
 }
 
 #task{
-	position: absolute;
-	left: 8%;
-	top: 30%;
+	position: relative;
+	margin-top: 3%;
+	margin-left: 4%;
+	margin-bottom: 0;
+	width: 90%;
 }
 
 #audioLabel{
-	position: absolute;
-	left: 3%;
-	top: 33%; 	
+	position: relative;
+	margin-left: 3%;
+	margin-top: 4%; 
+	margin-bottom: 0;
+	display: inline-block;	
+	width: 55%;
 }
 
 #questionAudio{
-	position: absolute;
-	left: 55%;
-	top: 35%;
+	position: relative;
+	display: inline-block;
+	margin-left: 2%;
+	margin-bottom: 0;
+	width: 35%;
 }
 
 #goodAnswerLabel{
-	position: absolute;
-	left: 3%;
-	top: 39%; 	
+	position: relative;
+	display: inline-block;
+	margin-left: 3%;
+	margin-top: 4%;
+	margin-bottom: 0%;
+	width: 55%;
 }
 
 #goodAnswer{
-	position: absolute;
-	left: 55%;
-	top: 41%;
+	position: relative;
+	display: inline-block;
+	margin-left: 2%;
+	margin-bottom: 0;
+	width: 35%;
 }
 
 #goodText{
-	position: absolute;
-	left: 8%;
-	top: 46%;
+	position: relative;
+	margin-top: 3%;
+	margin-left: 4%;
+	margin-bottom: 0;
+	width: 90%;
 }
 
 
 #badAnswerLabel{
-	position: absolute;
-	left: 3%;
-	top: 49%; 	
+	position: relative;
+	display: inline-block;
+	margin-left: 3%;
+	margin-top: 4%;
+	margin-bottom: 0%;
+	width: 55%; 	
 }
 
 #badAnswer{
-	position: absolute;
-	left: 55%;
-	top: 51%;
+	position: relative;
+	display: inline-block;
+	margin-left: 2%;
+	margin-bottom: 0;
+	width: 35%;
 }
 
 #badText{
-	position: absolute;
-	left: 8%;
-	top: 56%;
+	position: relative;
+	margin-top: 3%;
+	margin-left: 4%;
+	margin-bottom: 0;
+	width: 90%;
 }
 
 
 #stepThree{
-	position: absolute;
-	left: 8%;
-	top: 60%;
+	position: relative;
+	margin-left: 8%;
+	margin-top: 5%;
+	margin-bottom: 0;
 }
 
 #submitQuestion{
-	position: absolute;
-	top: 77%;
-	left: 25%;
+	position: relative;
+	margin-top: 5%;
+	margin-left: 20%;
+	margin-bottom: 0;
+	width: 60%;
 }
 
 #makeJson{
-	position: absolute;
-	top: 88%;
-	left: 26%;
+	position: relative;
+	margin-top: 30%;
+	margin-left: 20%;
+	width: 60%;
 }
+
 input[type='file'] {
   	color:transparent;  
 	width:40%; 
+}
+
+input[type='button']
+{
+	width: 50%;
 }
 
 
